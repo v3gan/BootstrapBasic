@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="/node_modules/bootstrap/dist/css/bootstrap.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <!-- <link rel="stylesheet" href="/css/no-bs.css"> -->
+    <link
+      href="/node_modules/jQuery-QueryBuilder/dist/css/query-builder.default.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">SQL Imported</div>
+          <div class="panel-body">
+            <pre id="SQLin"></pre>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">JSON Imported</div>
+          <div class="panel-body">
+            <pre id="JSONin"></pre>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col">
+            <div id="builderExpanded" class="query-builder form-inline">
+              <div id="builder_group_0" class="rules-group-container">
+                <div class="rules-group-header d-flex justify-content-between">
+                  <div class="btn-group group-actions order-1">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-success"
+                      data-add="rule"
+                    >
+                      <i class="glyphicon glyphicon-plus"></i> Add rule
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-success"
+                      data-add="group"
+                    >
+                      <i class="glyphicon glyphicon-plus-sign"></i> Add group
+                    </button>
+                  </div>
+                  <div class="btn-group group-conditions order-0">
+                    <label class="btn btn-sm btn-primary active disabled">
+                      <input
+                        type="radio"
+                        name="builder_group_0_cond"
+                        value="AND"
+                        disabled=""
+                      />
+                      AND
+                    </label>
+                    <label class="btn btn-sm btn-primary disabled">
+                      <input
+                        type="radio"
+                        name="builder_group_0_cond"
+                        value="OR"
+                        disabled=""
+                      />
+                      OR
+                    </label>
+                  </div>
+                  <div class="error-container">
+                    <i class="glyphicon glyphicon-warning-sign"></i>
+                  </div>
+                </div>
+                <div class="rules-group-body">
+                  <div class="rules-list">
+                    <div id="builder_rule_0" class="rule-container">
+                      <div class="rule-header">
+                        <div class="btn-group pull-right rule-actions">
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-danger"
+                            data-delete="rule"
+                          >
+                            <i class="glyphicon glyphicon-remove"></i> Delete
+                          </button>
+                        </div>
+                      </div>
+                      <div class="error-container">
+                        <i class="glyphicon glyphicon-warning-sign"></i>
+                      </div>
+                      <div class="rule-filter-container">
+                        <select class="form-control" name="builder_rule_0_filter">
+                          <option value="-1">------</option>
+                          <option value="name">Course</option>
+                        </select>
+                      </div>
+                      <div class="rule-operator-container">
+                        <span> equal </span>
+                        <select
+                          class="form-control hide"
+                          name="builder_rule_0_operator"
+                        >
+                          <option value="equal">equal</option>
+                        </select>
+                      </div>
+                      <div class="rule-value-container">
+                        <select class="form-control" name="builder_rule_0_value_0">
+                          <option value="1">MED 123</option>
+                          <option value="2">SURG 123</option>
+                          <option value="3">PEDS 123</option>
+                          <option value="4">NEUR 234</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <button id="btn-reset" class="btn btn-warning">Reset</button>
+        <button id="btn-set-sql" class="btn btn-success">
+          Set rules from SQL
+        </button>
+        <button id="btn-set-json" class="btn btn-success">
+          Set rules from JSON
+        </button>
+        <button id="btn-export" class="btn btn-primary">Export Rules</button>
+      </div>
+      <!-- <div class="row" style="margin-top: 1rem">
+        <div class="panel panel-default">
+          <div class="panel-heading">SQL Exported</div>
+          <div class="panel-body">
+            <pre id="SQLout"></pre>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">JSON Exported</div>
+          <div class="panel-body">
+            <pre id="JSONout"></pre>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/node_modules/jquery-extendext/jquery-extendext.js"></script>
+    <script src="/node_modules/dot/doT.js"></script>
+    <script src="/node_modules/jQuery-QueryBuilder/dist/js/query-builder.js"></script>
+    <!-- SQLParser from https://www.npmjs.com/package/sql-parser-mistic -->
+    <script src="/node_modules/sql-parser-mistic/browser/sql-parser.js"></script>
+    <!-- <script src="/index.js"></script> -->
+  </body>
+</html>
